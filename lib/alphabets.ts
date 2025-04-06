@@ -9,16 +9,6 @@ export interface Alphabet {
 
 // Complete Hindi Alphabet System
 export const alphabets: Alphabet[] = [
-  { character: "अ", name: "अ (a)", pronunciation: "Pronounced as 'a' in 'about'", audio: "hindi_अ.mp3", strokes: ["M1,10 L5,20", "M5,20 L15,30"], id:1 },
-  { character: "आ", name: "आ (aa)", pronunciation: "Pronounced as 'a' in 'father'", audio: "hindi_आ.mp3", strokes: ["M2,12 L7,22", "M7,22 L17,32", "M15,30 L20,40"],id:2 },
-  { character: "इ", name: "इ (i)", pronunciation: "Pronounced as 'i' in 'sit'", audio: "hindi_इ.mp3", strokes: ["M3,14 L8,24", "M8,24 L18,34"],id:3 },
-  { character: "ई", name: "ई (ee)", pronunciation: "Pronounced as 'ee' in 'feet'", audio: "hindi_ई.mp3", strokes: ["M4,15 L9,25", "M9,25 L19,35", "M17,33 L22,43"],id:4 },
-  { character: "उ", name: "उ (u)", pronunciation: "Pronounced as 'u' in 'put'", audio: "hindi_उ.mp3", strokes: ["M5,16 L10,26", "M10,26 L20,36"],id:5 },
-  { character: "ऊ", name: "ऊ (oo)", pronunciation: "Pronounced as 'oo' in 'boot'", audio: "hindi_ऊ.mp3", strokes: ["M6,18 L11,28", "M11,28 L21,38", "M19,36 L24,46"],id:6 },
-  { character: "ए", name: "ए (e)", pronunciation: "Pronounced as 'e' in 'bed'", audio: "hindi_ए.mp3", strokes: ["M7,19 L12,29", "M12,29 L22,39"] , id:7},
-  { character: "ऐ", name: "ऐ (ai)", pronunciation: "Pronounced as 'ai' in 'fair'", audio: "hindi_ऐ.mp3", strokes: ["M8,20 L13,30", "M13,30 L23,40", "M21,38 L26,48"],id:8 },
-  { character: "ओ", name: "ओ (o)", pronunciation: "Pronounced as 'o' in 'go'", audio: "hindi_ओ.mp3", strokes: ["M9,21 L14,31", "M14,31 L24,41"] ,id:9},
-  { character: "औ", name: "औ (au)", pronunciation: "Pronounced as 'au' in 'caught'", audio: "hindi_औ.mp3", strokes: ["M10,22 L15,32", "M15,32 L25,42", "M23,40 L28,50"],id:10 },
   { character: "क", name: "क (ka)", pronunciation: "Pronounced as 'k' in 'kite'", audio: "hindi_क.mp3", strokes: ["M11,23 L16,33", "M16,33 L26,43"],id:11 },
   { character: "ख", name: "ख (kha)", pronunciation: "Pronounced as 'kh' in 'Khalid'", audio: "hindi_ख.mp3", strokes: ["M12,24 L17,34", "M17,34 L27,44", "M25,42 L30,52"],id:12 },
   { character: "ग", name: "ग (ga)", pronunciation: "Pronounced as 'g' in 'go'", audio: "hindi_ग.mp3", strokes: ["M13,25 L18,35", "M18,35 L28,45"],id:13 },
@@ -52,5 +42,15 @@ export const alphabets: Alphabet[] = [
   { character: "ह", name: "ह (ha)", pronunciation: "Pronounced as ह in hi", audio: "hindi_ह.mp3", strokes: ["M10,10 L10,30", "M5,15 L15,10", "M5,25 L15,20"],id:41 },
   { character: "क्ष", name: "क्ष (kṣa)", pronunciation: "Pronounced as क्ष in kshatriya", audio: "hindi_क्ष.mp3", strokes: ["M5,10 L15,20", "M10,10 L10,30", "M5,25 L15,20", "M5,5 L15,10"],id:42 },
   { character: "त्र", name: "त्र (tra)", pronunciation: "Pronounced as त्र in try", audio: "hindi_त्र.mp3", strokes: ["M10,10 L10,30", "M5,20 L15,20", "M8,5 L18,10", "M5,5 L15,10"],id:43 },
-  { character: "ज्ञ", name: "ज्ञ (gya)", pronunciation: "Pronounced as ज्ञ in gyan", audio: "hindi_ज्ञ.mp3", strokes: ["M5,10 L15,20", "M10,10 L10,30", "M5,25 L15,20", "M5,5 L15,10"],id:44 }
+  { character: "ज्ञ", name: "ज्ञ (gya)", pronunciation: "Pronounced as ज्ञ in gyan", audio: "hindi_ज्ञ.mp3", strokes: ["M5,10 L15,20", "M10,10 L10,30", "M5,25 L15,20", "M5,5 L15,10"],id:44 },
+  { character: "अ", name: "अ (a)", pronunciation: "Pronounced as 'a' in 'about'", audio: "hindi_अ.mp3", strokes: ["M1,10 L5,20", "M5,20 L15,30"], id:1 },
+  { character: "आ", name: "आ (aa)", pronunciation: "Pronounced as 'a' in 'father'", audio: "hindi_आ.mp3", strokes: ["M2,12 L7,22", "M7,22 L17,32", "M15,30 L20,40"],id:2 },
+  { character: "इ", name: "इ (i)", pronunciation: "Pronounced as 'i' in 'sit'", audio: "hindi_इ.mp3", strokes: ["M3,14 L8,24", "M8,24 L18,34"],id:3 },
+  { character: "ई", name: "ई (ee)", pronunciation: "Pronounced as 'ee' in 'feet'", audio: "hindi_ई.mp3", strokes: ["M4,15 L9,25", "M9,25 L19,35", "M17,33 L22,43"],id:4 },
+  { character: "उ", name: "उ (u)", pronunciation: "Pronounced as 'u' in 'put'", audio: "hindi_उ.mp3", strokes: ["M5,16 L10,26", "M10,26 L20,36"],id:5 },
+  { character: "ऊ", name: "ऊ (oo)", pronunciation: "Pronounced as 'oo' in 'boot'", audio: "hindi_ऊ.mp3", strokes: ["M6,18 L11,28", "M11,28 L21,38", "M19,36 L24,46"],id:6 },
+  { character: "ए", name: "ए (e)", pronunciation: "Pronounced as 'e' in 'bed'", audio: "hindi_ए.mp3", strokes: ["M7,19 L12,29", "M12,29 L22,39"] , id:7},
+  { character: "ऐ", name: "ऐ (ai)", pronunciation: "Pronounced as 'ai' in 'fair'", audio: "hindi_ऐ.mp3", strokes: ["M8,20 L13,30", "M13,30 L23,40", "M21,38 L26,48"],id:8 },
+  { character: "ओ", name: "ओ (o)", pronunciation: "Pronounced as 'o' in 'go'", audio: "hindi_ओ.mp3", strokes: ["M9,21 L14,31", "M14,31 L24,41"] ,id:9},
+  { character: "औ", name: "औ (au)", pronunciation: "Pronounced as 'au' in 'caught'", audio: "hindi_औ.mp3", strokes: ["M10,22 L15,32", "M15,32 L25,42", "M23,40 L28,50"],id:10 },
   ];
