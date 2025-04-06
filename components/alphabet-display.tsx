@@ -14,12 +14,10 @@ interface AlphabetDisplayProps {
 export default function AlphabetDisplay({ alphabet, index }: AlphabetDisplayProps) {
   const [showAnimation, setShowAnimation] = useState(false)
 
-  // Reset animation state when alphabet changes
   useEffect(() => {
     setShowAnimation(false)
   }, [])
 
-  // Update local storage with the current alphabet's ID
   useEffect(() => {
     const storedId = localStorage.getItem("currentAlphabetId")
     const newId = alphabet.id.toString()
@@ -29,7 +27,6 @@ export default function AlphabetDisplay({ alphabet, index }: AlphabetDisplayProp
     }
   }, [alphabet])
 
-  // Generate a random color for the alphabet
   const getRandomColor = () => {
     const colors = [
       "text-red-500",
@@ -45,27 +42,17 @@ export default function AlphabetDisplay({ alphabet, index }: AlphabetDisplayProp
   }
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="relative w-64 h-64 flex items-center justify-center">
-        {/* Static display of the alphabet */}
-        {!showAnimation && (
-          <div
-            className={`text-9xl font-bold ${getRandomColor()} drop-shadow-lg transform hover:scale-110 transition-transform duration-300`}
-          >
-            {alphabet.character}
-          </div>
-        )}
+    <div
+  className="min-h-screen w-full flex flex-col items-center justify-center"
+  style={{
+    backgroundImage: `url(${alphabet.imageUrl})`,
+    backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+  }}
+>
 
-        {/* Animated stroke-by-stroke display */}
-        
-      </div>
-
-      <div className="mt-4 text-center">
-        <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 mb-1">
-          {alphabet.name}
-        </h2>
-        <p className="text-indigo-800 font-medium">{alphabet.pronunciation}</p>
-      </div>
+      
     </div>
   )
 }

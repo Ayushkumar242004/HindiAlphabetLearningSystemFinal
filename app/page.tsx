@@ -196,7 +196,7 @@ export default function AlphabetLearningSystem() {
             <Button
               variant="default"
               size="lg"
-              className="mt-6 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white font-bold px-6 py-6 h-auto shadow-lg transform hover:scale-105 transition-transform"
+              className=" rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white font-bold px-6 py-6 h-auto shadow-lg transform hover:scale-105 transition-transform"
               onClick={playAudio}
               disabled={!isClient} // Prevents interaction before hydration
             >
@@ -234,16 +234,7 @@ export default function AlphabetLearningSystem() {
             Previous
           </Button>
 
-          <div className="flex gap-4">
-            <Button
-              variant="outline"
-              onClick={handleReset}
-              className="bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-white border-none rounded-full px-6 py-6 h-auto shadow-lg"
-            >
-              <RefreshCw className="h-5 w-5 mr-2" />
-              Try Again
-            </Button>
-          </div>
+         
 
 
           <Button
