@@ -111,37 +111,6 @@ export default function DrawingCanvas({
     // drawGuidePattern(ctx, alphabet);
   };
 
-  const drawGuidePattern = (
-    context: CanvasRenderingContext2D,
-    alphabet: Alphabet
-  ) => {
-    // Draw a faint guide pattern based on the alphabet
-    context.save();
-    context.globalAlpha = 0.15;
-    context.lineWidth = 6;
-    context.strokeStyle = "#6366f1";
-
-    // Draw guide strokes
-    alphabet.strokes.forEach((stroke) => {
-      const path = new Path2D(stroke);
-      context.stroke(path);
-    });
-
-    // Draw background letter
-    context.globalAlpha = 0.2; // Make the text more faint
-    context.font = "bold 180px Arial"; // Adjust font size as needed
-    context.fillStyle = "#d1d5db"; // Light gray color
-    context.textAlign = "center";
-    context.textBaseline = "middle";
-    const { width, height } = context.canvas;
-
-    if (alphabet.character) {
-      context.fillText(alphabet.character, width / 2, height / 2); // Centered letter
-    }
-
-    context.restore();
-  };
-
   const startDrawing = (
     e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>
   ) => {
@@ -203,23 +172,6 @@ export default function DrawingCanvas({
 
     setStrokes((prev) => [...prev, { x, y, isDrawing: true }]);
   };
-
-  // const endDrawing = () => {
-  //   setIsDrawing(false);
-  //   if (ctx) ctx.closePath();
-
-  //   // Clear any existing timeout to prevent multiple calls to analyzeDrawing
-  //   if (drawingTimeout) {
-  //     clearTimeout(drawingTimeout);
-  //   }
-
-  //   // Wait 3 seconds before analyzing, unless the user starts drawing again
-  //   const timeout = setTimeout(() => {
-  //     analyzeDrawing();
-  //   }, 3000);
-
-  //   setDrawingTimeout(timeout);
-  // };
 
   const endDrawing = () => {
     setIsDrawing(false);
@@ -348,16 +300,19 @@ export default function DrawingCanvas({
     let accuracy = (drawnPattern / correctPattern) * 100;
     accuracy = Math.max(10, Math.min(100, accuracy));
 
-    if (accuracy > 75) {
+    if (accuracy > 50) {
       isHighAccuracy = true;
     }
 
     // Set feedback based on prediction and accuracy
     if (isValidPrediction && isHighAccuracy) {
       setFeedback("correct");
-      confetti({ particleCount: 100, spread: 70 });
+      localStorage.setItem('check', 'yes');
+      confetti({ particleCount: 200, spread: 100 });
     } else {
       setFeedback("incorrect");
+      accuracy = Math.floor(Math.random() * 70); 
+      localStorage.setItem('check', 'no');
     }
 
     // Always call onComplete with accuracy
@@ -365,7 +320,7 @@ export default function DrawingCanvas({
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center ">
       <div className="relative w-full border-4 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 shadow-inner border-purple-300">
         {/* Feedback overlay */}
         {feedback && (
@@ -410,7 +365,7 @@ export default function DrawingCanvas({
           className="bg-gradient-to-r from-red-400 to-pink-400 hover:from-red-500 hover:to-pink-500 text-white border-none rounded-full px-6 shadow-md"
         >
           <Eraser className="h-4 w-4 mr-2" />
-          Clear
+          Try Again
         </Button>
         <Button
           variant="outline"
