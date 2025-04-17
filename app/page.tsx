@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { 
   Trophy,
@@ -49,10 +49,15 @@ export default function AlphabetLearningSystem() {
   }, [isAuthenticated, router]);
 
   const currentAlphabet = alphabets[currentIndex];
-  const overallProgress = Math.round(
-    (Object.keys(progress).length / alphabets.length) * 100
-  );
-
+  const overallProgress = useMemo(() => {
+    const checkValue = localStorage.getItem("check");
+    if (checkValue === "yes") {
+      return Math.round(
+        (Object.keys(progress).length / alphabets.length) * 100
+      );
+    }
+    return 0; // Keep progress as it is if "check" is not "yes"
+  }, [progress, alphabets.length]);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
